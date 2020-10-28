@@ -1,0 +1,253 @@
+React JSX
+
+Components:
+
+The App Itself
+
+<Router>
+<div>
+<Navbar />
+<br/>
+<Route path="/" exact component={ExercisesList} />
+<Route path="/edit/:id" component={EditExercise} />
+<Route path="/create" component={CreateExercise} />
+<Route path="/user" component={CreateUser} />
+</div>
+</Router>
+
+Navbar
+
+<nav className="navbar navbar-dark bg-primary navbar-expand-lg">
+<Link to="/user" className="navbar-brand">Excercise Tracker</Link>
+<div className="collpase navbar-collapse">
+<ul className="navbar-nav mr-auto">
+<li className="navbar-item">
+<Link to="/" className="nav-link">LeaderBoard</Link>
+</li>
+<li className="navbar-item">
+<Link to="/create" className="nav-link">Enter New Record</Link>
+</li>
+<li className="navbar-item">
+<Link to="/user" className="nav-link">Sign Up</Link>
+</li>
+</ul>
+</div>
+</nav>
+
+Exercise List
+
+<div>
+<h3>Exercise LeaderBoard</h3>
+<table className="table">
+<thead className="thead-light">
+<tr>
+<th>Username</th>
+<th>Description</th>
+<th>Duration</th>
+<th>Date</th>
+<th>Actions</th>
+</tr>
+</thead>
+<tbody>
+{ this.exerciseList() }
+</tbody>
+</table>
+</div>
+
+Edit Exercise
+
+<div>
+<h3>Edit Exercise Log</h3>
+<form onSubmit={this.onSubmit}>
+<div className="form-group"> 
+<label>Username: </label>
+<select ref="userInput"
+required
+className="form-control"
+value={this.state.username}
+onChange={this.onChangeUsername}>
+{
+this.state.users.map(function(user) {
+return <option 
+key={user}
+value={user}>{user}
+</option>;
+})
+}
+</select>
+</div>
+<div className="form-group"> 
+<label>Password: </label>
+<input  type="password"
+required
+className="form-control"
+/>
+</div>
+<div className="form-group"> 
+<label>Description: </label>
+<input  type="text"
+required
+className="form-control"
+value={this.state.description}
+onChange={this.onChangeDescription}
+/>
+</div>
+<div className="form-group">
+<label>Duration (in minutes): </label>
+<input 
+type="text" 
+className="form-control"
+value={this.state.duration}
+onChange={this.onChangeDuration}
+/>
+</div>
+<div className="form-group">
+<label>Date: </label>
+<div>
+<DatePicker
+selected={this.state.date}
+onChange={this.onChangeDate}
+/>
+</div>
+</div>
+<div className="form-group">
+<input type="submit" value="Edit Exercise Log" className="btn btn-primary" />
+</div>
+</form>
+</div>
+
+Create User
+
+<div>
+<h2>Why track your exercise?</h2>
+<ul>
+<li> Makes it more likely to reach and surpass your goal.</li>
+<li>Allows you to be more efficient in your time and workouts.</li>
+<li>Lends accountability to yourself and your goals.</li>
+<li>Allows for easier modifications and shows when and where changes need to be made.</li>
+<li>It can be motivating and reinforcing to remind you why you are doing what you are.</li>
+<li>Helps to drive the focus and direction of your programming.</li>
+<li>Keeps you committed to your plan.</li>
+</ul>
+<h2>About us</h2>
+<p> We here at Exercise Tracker know the impact of exercise in everyday life.</p>
+<p>We understand the difficulties you face in following a routine.</p>
+<p><b><i>So signup with our tracker now and allow us to help you!</i></b></p>
+<h3>Create New User</h3>
+<form onSubmit={this.onSubmit}>
+<div className="form-group"> 
+<label>Name: </label>
+<input type="text"
+required
+className="form-control"
+value={this.state.name}
+onChange={this.onChangeName}
+/>
+</div>
+<div className="form-group"> 
+<label>Email: </label>
+<input type="text"
+required
+className="form-control"
+value={this.state.email}
+onChange={this.onChangeEmail}
+/>
+</div>
+<div className="form-group"> 
+<label>Username: </label>
+<input  type="text"
+required
+className="form-control"
+value={this.state.username}
+onChange={this.onChangeUsername}
+/>
+</div>
+<div className="form-group"> 
+<label>Password: </label>
+<input  type="password"
+required
+className="form-control"
+value={this.state.password}
+onChange={this.onChangePassword}
+/>
+</div>
+<div className="form-group">
+<input type="submit" value="Create New User" className="btn btn-primary" />
+<ul className="navbar-nav mr-auto">
+<li className="navbar-item">
+<Link to="/create" className="nav-link"><button type="button" class="btn btn-primary">Enter New Record</button></Link>
+</li>
+<li className="navbar-item">
+<Link to="/" className="nav-link"><button type="button" class="btn btn-primary">View LeaderBoard</button></Link>
+</li>
+</ul>
+</div>
+</form>
+<div class="footer">
+<p><i>Feel free to contact us at 9977099888(Tanishq Wadhwani)</i></p>
+</div>
+</div>
+
+Create Exercise
+
+<div>
+<h3>Create New Exercise Log</h3>
+<form onSubmit={this.onSubmit}>
+<div className="form-group"> 
+<label>Username: </label>
+<select ref="userInput"
+required
+className="form-control"
+value={this.state.username}
+onChange={this.onChangeUsername}>
+{
+this.state.users.map(function(user) {
+return <option 
+key={user}
+value={user}>{user}
+</option>;
+})
+}
+</select>
+</div>
+<div className="form-group"> 
+<label>Password: </label>
+<input type="password"
+required
+className="form-control"
+value={this.state.password}
+onChange={this.onChangePassword}
+/>
+</div>
+<div className="form-group"> 
+<label>Description: </label>
+<input  type="text"
+required
+className="form-control"
+value={this.state.description}
+onChange={this.onChangeDescription}
+/>
+</div>
+<div className="form-group">
+<label>Duration (in minutes): </label>
+<input 
+type="text" 
+className="form-control"
+value={this.state.duration}
+onChange={this.onChangeDuration}
+/>
+</div>
+<div className="form-group">
+<label>Date: </label>
+<div>
+<DatePicker
+selected={this.state.date}
+onChange={this.onChangeDate}
+/>
+</div>
+</div>
+<div className="form-group">
+<input type="submit" value="Create Exercise Log" className="btn btn-primary" />
+</div>
+</form>
+</div>
