@@ -1,0 +1,15 @@
+label
+{	background-color: rgba(255,204,92,0.5);
+	border-radius:5px;
+	margin:5px;
+	padding:5px;
+	text-align: center;
+	color: black;
+	box-sizing: border-box;
+}
+
+.div-b
+{
+  background-image: url(./2.jpg);
+  background-size: cover;
+}

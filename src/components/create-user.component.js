@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import './createuser.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+
 
 export default class CreateUser extends Component {
   constructor(props) {
@@ -69,71 +72,75 @@ export default class CreateUser extends Component {
 
   render() {
     return (
-      <div>
+      <div class="div-a">
         <h2>Why track your exercise?</h2>
         <ul>
-          <li> Makes it more likely to reach and surpass your goal.</li>
-          <li>Allows you to be more efficient in your time and workouts.</li>
-          <li>Lends accountability to yourself and your goals.</li>
-          <li>Allows for easier modifications and shows when and where changes need to be made.</li>
-          <li>It can be motivating and reinforcing to remind you why you are doing what you are.</li>
-          <li>Helps to drive the focus and direction of your programming.</li>
-          <li>Keeps you committed to your plan.</li>
+          <li class="li-s"> Makes it more likely to reach and surpass your goal.</li>
+          <li class="li-s">Allows you to be more efficient in your time and workouts.</li>
+          <li class="li-s">Lends accountability to yourself and your goals.</li>
+          <li class="li-s">Allows for easier modifications and shows when and where changes need to be made.</li>
+          <li class="li-s">It can be motivating and reinforcing to remind you why you are doing what you are.</li>
+          <li class="li-s">Helps to drive the focus and direction of your programming.</li>
+          <li class="li-s">Keeps you committed to your plan.</li>
         </ul>
         <h2>About us</h2>
-        <p> We here at Exercise Tracker know the impact of exercise in everyday life.</p>
-        <p>We understand the difficulties you face in following a routine.</p>
-        <p><b><i>So signup with our tracker now and allow us to help you!</i></b></p>
-        <h3>Create New User</h3>
-        <form onSubmit={this.onSubmit}>
-        <div className="form-group"> 
-            <label>Name: </label>
-            <input type="text"
-                required
-                className="form-control"
-                value={this.state.name}
-                onChange={this.onChangeName}
-                />
-          </div>
+        <ul>
+        <li class="li-s">We here at Exercise Tracker know the impact of exercise in everyday life.</li>
+        <li class="li-s">We understand the difficulties you face in following a routine.</li>
+        <li class="li-s"><b><i>So signup with our tracker now and allow us to help you!</i></b></li>
+        </ul>
+        <div class="div-s">
+          <h2>Create New User</h2>
+          <form onSubmit={this.onSubmit}>
           <div className="form-group"> 
-            <label>Email: </label>
-            <input type="text"
-                required
-                className="form-control"
-                value={this.state.email}
-                onChange={this.onChangeEmail}
-                />
-          </div>
-          <div className="form-group"> 
-            <label>Username: </label>
-            <input  type="text"
-                required
-                className="form-control"
-                value={this.state.username}
-                onChange={this.onChangeUsername}
-                />
-          </div>
-          <div className="form-group"> 
-            <label>Password: </label>
-            <input  type="password"
-                required
-                className="form-control"
-                value={this.state.password}
-                onChange={this.onChangePassword}
-                />
-          </div>
-          <div className="form-group">
-            <input type="submit" value="Create New User" className="btn btn-primary" />
-            <ul className="navbar-nav mr-auto">
-            <li className="navbar-item">
-            <Link to="/create" className="nav-link"><button type="button" class="btn btn-primary">Enter New Record</button></Link>
-            </li>
-            <li className="navbar-item">
-            <Link to="/" className="nav-link"><button type="button" class="btn btn-primary">View LeaderBoard</button></Link>
-            </li>
-            </ul>
-          </div>
-        </form>
+              <label>Name: </label>
+              <input type="text"
+                  required
+                  className="form-control"
+                  value={this.state.name}
+                  onChange={this.onChangeName}
+                  />
+            </div>
+            <div className="form-group"> 
+              <label>Email: </label>
+              <input type="text"
+                  required
+                  className="form-control"
+                  value={this.state.email}
+                  onChange={this.onChangeEmail}
+                  />
+            </div>
+            <div className="form-group"> 
+              <label>Username: </label>
+              <input  type="text"
+                  required
+                  className="form-control"
+                  value={this.state.username}
+                  onChange={this.onChangeUsername}
+                  />
+            </div>
+            <div className="form-group"> 
+              <label>Password: </label>
+              <input  type="password"
+                  required
+                  className="form-control"
+                  value={this.state.password}
+                  onChange={this.onChangePassword}
+                  />
+            </div>
+            <div className="form-group">
+              <input type="submit" value="Create New User" className="btn btn-dark" />
+              <ul className="navbar-nav mr-auto">
+              <li className="navbar-item">
+              <Link to="/create" className="nav-link"><button type="button" class="btn btn-dark">Enter New Record</button></Link>
+              </li>
+              <li className="navbar-item">
+              <Link to="/" className="nav-link"><button type="button" class="btn btn-dark">View LeaderBoard</button></Link>
+              </li>
+              </ul>
+            </div>
+          </form>
+        </div>
         <div class="footer">
         <p><i>Feel free to contact us at 9977099888(Tanishq Wadhwani)</i></p>
         </div>

@@ -1,0 +1,22 @@
+h2, p
+{
+	text-align: center;
+  text-transform: uppercase;
+  text-shadow: 2px 2px 5px #ffcc5c;
+}
+
+.li-s
+{
+  text-shadow: 2px 2px 5px #ffcc5c;
+}
+
+.div-s
+{
+  background-image: url(./3.jpg);
+  background-size: cover;
+}
+
+.div-a
+{
+  background-color: rgba(0,0,0,0.4);
+}

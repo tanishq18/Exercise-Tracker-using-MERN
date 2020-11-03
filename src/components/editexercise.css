@@ -1,0 +1,13 @@
+h1
+{
+	font-family: "Comic Sans MS", cursive, sans-serif;
+	text-align: center;
+	text-transform: uppercase;
+	text-shadow: 2px 2px 5px #ffcc5c;
+}
+
+.div-c
+{
+  background-image: url(./1.jpg);
+  background-size: cover;
+}
